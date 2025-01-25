@@ -44,3 +44,40 @@ test_cases = [tuple(map(int, input().split())) for _ in range(t)]
 results = classify_digits(t, test_cases)
 for result in results:
     print(result)
+
+
+D
+
+
+def minimum_square_magnitude(t, test_cases):
+    results = []
+    for vectors, m in test_cases:
+        x_sum = sum(v[0] for v in vectors)
+        y_sum = sum(v[1] for v in vectors)
+        
+        if x_sum >= 0:
+            x_adjustment = max(-x_sum, -m)
+        else:
+            x_adjustment = min(-x_sum, m)
+        
+        if y_sum >= 0:
+            y_adjustment = max(-y_sum, -m)
+        else:
+            y_adjustment = min(-y_sum, m)
+        
+        x_res = x_sum + x_adjustment
+        y_res = y_sum + y_adjustment
+        results.append(x_res**2 + y_res**2)
+    
+    return results
+
+t = int(input())
+test_cases = []
+
+for _ in range(t):
+    vectors = [tuple(map(int, input().split())) for _ in range(3)]
+    m = int(input())
+    test_cases.append((vectors, m))
+
+results = minimum_square_magnitude(t, test_cases)
+print("\n".join(map(str, results)))
