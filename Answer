@@ -123,3 +123,24 @@ n = int(input())
 arr = list(map(int, input().split()))
 print(find_largest_subarray(n, arr))
 
+
+F
+
+
+from math import gcd
+
+def pile_of_stones(test_cases):
+    results = []
+    for a, b in test_cases:
+        results.append(gcd(a, b))
+    return results
+
+
+t = int(input())
+test_cases = [tuple(map(int, input().split())) for _ in range(t)]
+
+
+results = pile_of_stones(test_cases)
+print("\n".join(map(str, results)))
+
+
