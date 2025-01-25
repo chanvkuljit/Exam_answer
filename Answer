@@ -24,6 +24,7 @@ for _ in range(t):
 
 
 
+
 B
 
 
@@ -81,3 +82,18 @@ for _ in range(t):
 
 results = minimum_square_magnitude(t, test_cases)
 print("\n".join(map(str, results)))
+
+C
+
+from math import gcd
+from functools import reduce
+
+def find_largest_subarray(n, arr):
+    if reduce(gcd, arr) != 1:
+        return -1
+    return n
+
+n = int(input())
+arr = list(map(int, input().split()))
+print(find_largest_subarray(n, arr))
+
