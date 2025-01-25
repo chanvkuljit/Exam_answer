@@ -1,1 +1,21 @@
 problem copy kari ne upload kar.
+
+
+A
+
+def solve():
+    n, k = map(int, input().split())
+
+    if k == 1:
+        print(n)
+    else:
+        ans = 0
+        ans += n
+        ans += (n - 1) * (k - 1)
+        
+        print(ans)
+
+
+t = int(input(""))
+for _ in range(t):
+    solve()
