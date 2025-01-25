@@ -19,3 +19,28 @@ def solve():
 t = int(input(""))
 for _ in range(t):
     solve()
+
+
+
+
+
+B
+
+
+def classify_digits(t, test_cases):
+    results = []
+    for a, b, c in test_cases:
+        if a < b < c:
+            results.append("STAIR")
+        elif a < b > c:
+            results.append("PEAK")
+        else:
+            results.append("NONE")
+    return results
+
+t = int(input())
+test_cases = [tuple(map(int, input().split())) for _ in range(t)]
+
+results = classify_digits(t, test_cases)
+for result in results:
+    print(result)
