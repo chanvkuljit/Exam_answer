@@ -144,3 +144,21 @@ results = pile_of_stones(test_cases)
 print("\n".join(map(str, results)))
 
 
+
+H
+
+def flip_cups(n, cups):
+    count_D = cups.count('D')
+    if count_D % 4 == 0:
+        steps = count_D // 4
+        return f":) {steps}"
+    else:
+        return ":("
+
+n = int(input())
+cups = input().split()
+
+print(flip_cups(n, cups))
+
+
+
